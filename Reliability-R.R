@@ -196,7 +196,7 @@ plot_rely<- function(dados,Equi,unidade="Dias"){
     stat_function(fun=function(x) pgamma(x, location =aux[[2]]$estimate[1], scale = aux[[2]]$estimate[2]),aes(colour = "Prob. de Falha"))}
   
   
-  plota<- plota + scale_x_continuous(name = unidade,
+  plota<- plota + scale_x_continuous(name = "Dias",
                                      limits=c(0, max(dados))) +
     scale_y_continuous(name = "Probabilidade") +
     ggtitle("") +
@@ -205,8 +205,8 @@ plot_rely<- function(dados,Equi,unidade="Dias"){
   
   
   #Printando graficos
-  plotd<-denscomp(aux[2], legendtext = aux[1], plotstyle = "ggplot",xlab = unidade, main= " Aporx. Fun??o densidade")
-  plotc<-cdfcomp(aux[2], legendtext = "Prob falha" ,plotstyle = "ggplot",xlab = unidade ,do.points = FALSE,ylab = "", main = "Aprox. Dist. cumulativa")
+  plotd<-denscomp(aux[2], legendtext = aux[1], plotstyle = "ggplot",xlab = unidade, main= " Aprox. Func densidade")
+  plotc<-cdfcomp(aux[2], legendtext = "Prob falha" ,plotstyle = "ggplot",xlab = unidade,do.points = FALSE,ylab = "", main = "Aprox. Dist. cumulativa")
   
   ''#printando resultado do fit dist
   print(aux[[2]])
